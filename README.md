@@ -73,7 +73,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ## API Endpoints
 
 - `GET /api/data/load` - Upload the movies.csv file
-- `GET /api/movies/find` - Get movie details 
+- `GET /api/movies/find?query=...` - Get movie details e.g. Find me a film about rebels and tell me where to stream it in GB
 
 ## Project Structure
 
@@ -110,3 +110,4 @@ src/main/java/com/softteco/filmfinder/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Based on the original article from here https://dev.to/mongodb/build-your-first-ai-agent-with-mongodb-and-langchain4j-4i5l

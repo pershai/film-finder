@@ -9,9 +9,11 @@ spring:
       database: film_finder
       auto-index-creation: true
       repositories:
-        type: auto
+        type: reactive
       username: ${MONGO_USERNAME}
       password: ${MONGO_PASSWORD}
+      reactive:
+        connection-string: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_URL}:${MONGO_PORT}/film_finder?authSource=admin&retryWrites=true&w=majority
 
 # AI Agent Configuration
 hugging_face:
