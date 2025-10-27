@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: film-finder
+  
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: film_finder
+      auto-index-creation: true
+      repositories:
+        type: auto
+      username: root
+      password: root
+
+# AI Agent Configuration
+hugging_face:
+  api:
+    key: ${HUGGINGFACE_API_KEY}  # Set this environment variable with your Hugging Face API key
+  model:
+    name: sentence-transformers/msmarco-MiniLM-L12-v3
+
+app:
+  embedding:
+    model: ${hugging_face.model.name}
+    maxResults: 5
+    minScore: 0.7
+
+
+# Vector Store Configuration
+vector:
+  store:
+    collection: embeddings
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.data.mongodb.core: DEBUG
+    dev.langchain4j: INFO
+    com.softteco.filmfinder: DEBUG
+
+gemini:
+  api.key: ${GEMINI_API_KEY:}
+  model:
+    name: gemini-2.5-flash
+    temperature: 0.0
+    topP: 0.95
+    topK: 64
+    outputTokens: 8192
+    timeout: 60 #seconds
+    logRequestsAndResponses: true
+
+watchmode:
+  api:
+    key: ${WATCHMODE_API_KEY}
+  region: GB
