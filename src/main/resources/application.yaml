@@ -4,14 +4,14 @@ spring:
   
   data:
     mongodb:
-      host: localhost
-      port: 27017
+      host: ${MONGO_URL}
+      port: ${MONGO_PORT}
       database: film_finder
       auto-index-creation: true
       repositories:
         type: auto
-      username: root
-      password: root
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
 
 # AI Agent Configuration
 hugging_face:
@@ -44,7 +44,7 @@ gemini:
   api.key: ${GEMINI_API_KEY:}
   model:
     name: gemini-2.5-flash
-    temperature: 0.0
+    temperature: 1
     topP: 0.95
     topK: 64
     outputTokens: 8192
