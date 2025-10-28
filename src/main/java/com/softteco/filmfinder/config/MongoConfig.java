@@ -2,6 +2,8 @@ package com.softteco.filmfinder.config;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,13 +19,13 @@ public class MongoConfig {
 
     @Value("${spring.data.mongodb.port:27017}")
     private int mongoPort;
-    
+
     @Value("${spring.data.mongodb.username:}")
     private String username;
-    
+
     @Value("${spring.data.mongodb.password:}")
     private String password;
-    
+
     @Value("${spring.data.mongodb.authentication-database:admin}")
     private String authDb;
 
