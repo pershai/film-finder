@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -15,6 +18,12 @@ public class MovieSearchService {
     private final WatchmodeSearchTool watchmodeSearchTool;
     private final WatchmodeSearchSourcesTool watchmodeSearchSourcesTool;
     private final ChatModel chatModel;
+
+    public record MovieSearchResult(
+            List<Map<String, Object>> searchResults,
+            Map<String, Object> movieDetails,
+            List<Map<String, Object>> sources
+    ) {}
 
     public String search(String request) {
         try {

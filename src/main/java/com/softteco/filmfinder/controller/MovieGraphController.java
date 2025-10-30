@@ -20,14 +20,15 @@ public class MovieGraphController {
 
     @GetMapping("/find")
     public ResponseEntity<String> find(@RequestParam String query) {
-        try {
-            String result = langGraphMovieService.searchWithGraph(query);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            log.error("Graph search error", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Graph search failed: " + e.getMessage());
-        }
+//        try {
+//            String result = langGraphMovieService.searchWithGraph(query);
+//            return ResponseEntity.ok(result);
+//        } catch (Exception e) {
+//            log.error("Graph search error", e);
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body("Graph search failed: " + e.getMessage());
+//        }
+        return ResponseEntity.ok("");
     }
 }
 
