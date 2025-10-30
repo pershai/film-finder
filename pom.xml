@@ -34,7 +34,9 @@
         <langchain-gemini.version>1.7.1</langchain-gemini.version>
         <langchain-agentic.version>1.8.0-beta15</langchain-agentic.version>
         <langchain-core.version>1.8.0</langchain-core.version>
+        <langgraph4j-agent-executor.version>1.7.1</langgraph4j-agent-executor.version>
         <opencsv.version>5.12.0</opencsv.version>
+        <jackson.version>2.20.0</jackson.version>
     </properties>
     <dependencies>
         <dependency>
@@ -80,6 +82,16 @@
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-google-ai-gemini</artifactId>
             <version>${langchain-gemini.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bsc.langgraph4j</groupId>
+            <artifactId>langgraph4j-agent-executor</artifactId>
+            <version>${langgraph4j-agent-executor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version> <!-- or the latest version -->
         </dependency>
         <!-- MongoDB Java Driver is managed by Spring Boot -->
         <dependency>
