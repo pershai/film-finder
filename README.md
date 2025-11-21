@@ -110,3 +110,4 @@ src/main/java/com/softteco/filmfinder/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Based on the original article from here https://dev.to/mongodb/build-your-first-ai-agent-with-mongodb-and-langchain4j-4i5l
