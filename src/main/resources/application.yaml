@@ -25,7 +25,11 @@ app:
     model: ${hugging_face.model.name}
     maxResults: 5
     minScore: 0.7
-
+# Retry Configuration
+  retry:
+    maxAttempts: 3
+    initialDelay: 1000  # in milliseconds
+    multiplier: 2.0
 
 # Vector Store Configuration
 vector:
